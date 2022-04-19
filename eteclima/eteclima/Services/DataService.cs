@@ -12,7 +12,7 @@ namespace eteclima.Services
     {
         public static async Task <Tempo> GetPrevisaoDoTempo(string cidade)
         {
-            string appId = "b4733b68a1a9641fe562bba906b81a4b";
+            string appId = string.Empty; //# Your application ID
 
             string queryString = "http://api.openweathermap.org/data/2.5/weather?q=" + cidade + "&units=metric" + "&appid=" + appId;
             dynamic resultado = await getDataFromService(queryString).ConfigureAwait(false);
@@ -54,7 +54,7 @@ namespace eteclima.Services
 
         public static async Task<dynamic> getDataFromServiceByCity (string city)
         {
-            string appId = "b4733b68a1a9641fe562bba906b81a4b";
+            string appId = string.Empty; //# Your application ID
 
             string url = string.Format("http://api.openweathermap.org/data/2.5/forecast/daily?q=[0]&units=metric&cnt=1&APPID={1}", city.Trim(), appId);
             HttpClient client = new HttpClient();
